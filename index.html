@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Market Sampling - PT Selera Prima Food</title>
+    <title>Forecast Stock - PT Selera Prima Food</title>
     <style>
         * {
             margin: 0;
@@ -35,12 +35,15 @@
             transform: translateY(-3px);
         }
 
+        /* Update Header: Menggunakan Gambar Gedung SPF dengan Overlay Gelap */
         .header {
-            background: #DD1021; /* Merah McD */
-            color: white;
-            padding: 32px 24px;
-            text-align: center;
             position: relative;
+            background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 100%), url('Building Office SPF.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 45px 24px;
+            text-align: center;
         }
 
         .header::after {
@@ -49,19 +52,36 @@
             bottom: -12px;
             right: 20px;
             font-size: 48px;
-            opacity: 0.12;
+            opacity: 0.15;
             color: #FFC72C;
             pointer-events: none;
+            z-index: 1;
         }
 
+        /* Memastikan konten teks berada di atas overlay gambar */
         .header h1 {
+            position: relative;
+            z-index: 2;
             font-size: 1.55rem;
-            font-weight: 800;
+            font-weight: 800; /* Tebal solid */
             margin: 0;
-            line-height: 1.3;
+            line-height: 1.2;
             text-transform: uppercase;
             letter-spacing: -0.3px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            color: #FFFFFF;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Gaya Tulisan Sub-Judul Platform */
+        .header h1 span {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 400; /* Gaya tipis elegan */
+            letter-spacing: 2px; /* Renggang estetik */
+            margin-top: 8px;
+            color: #F8FAFC;
+            opacity: 0.95;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         .menu-section {
@@ -247,7 +267,9 @@
         /* Tampilan Mobile */
         @media (max-width: 480px) {
             body { padding: 16px; }
+            .header { padding: 36px 16px; }
             .header h1 { font-size: 1.25rem; }
+            .header h1 span { font-size: 0.95rem; margin-top: 6px; }
             .menu-section { padding: 20px 18px; }
             .menu-header { padding: 12px 16px; }
             .brand-logo-container { width: 45px; height: 30px; }
@@ -260,12 +282,14 @@
 
     <div class="container">
         <div class="header">
-            <h1>FORECAST PLATFORM <br>ALL VARIANT PRODUCT <br>PT SELERA PRIMA FOOD</h1>
+            <h1>
+                PT SELERA PRIMA FOOD
+                <span>Forecast Stock Product</span>
+            </h1>
         </div>
         
         <div class="menu-section">
 
-            <!-- 1688 - Background Kuning McD -->
             <div class="menu-item-wrapper">
                 <div class="menu-header" onclick="toggleDropdown(this)">
                     <div class="brand-info">
@@ -295,7 +319,6 @@
                 </div>
             </div>
 
-            <!-- Nagetku - Background Kuning McD -->
             <div class="menu-item-wrapper">
                 <div class="menu-header" onclick="toggleDropdown(this)">
                     <div class="brand-info">
@@ -310,13 +333,12 @@
                     <div class="arrow-icon">▼</div>
                 </div>
                 <div class="submenu-content">
-                    <a href="https://forms.gle/HYNxUY23Ea4vAJdeA" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🐔</span> Chicken Nugget
                     </a>
                 </div>
             </div>
 
-            <!-- Pickets - Background Dark Blue -->
             <div class="menu-item-wrapper">
                 <div class="menu-header" onclick="toggleDropdown(this)">
                     <div class="brand-info">
@@ -331,22 +353,21 @@
                     <div class="arrow-icon">▼</div>
                 </div>
                 <div class="submenu-content">
-                    <a href="https://forms.gle/L9Rk57frVHaoqSRf8" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🐔</span> Chicken Nugget
                     </a>
-                    <a href="https://forms.gle/ThGvZmi9tBXkUDuTA" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🥖</span> Sosis
                     </a>
-                    <a href="https://forms.gle/fTzKw1vAAEUgH8iv5" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🍔</span> Compliment
                     </a>
-                    <a href="https://forms.gle/N2YXrf41AwqWY7it6" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🥩</span> Beef / Daging
                     </a>
                 </div>
             </div>
 
-            <!-- 7hyori - Background Hitam (default) -->
             <div class="menu-item-wrapper">
                 <div class="menu-header" onclick="toggleDropdown(this)">
                     <div class="brand-info">
@@ -354,23 +375,23 @@
                             <img src="https://lh3.googleusercontent.com/d/1yFCvIYyQARbS6UJJ9oC9wrO6Ta8Od9ED" alt="Logo 7hyori" class="brand-logo-img scale-7hyori">
                         </div>
                         <div class="menu-title">
-                            7hyori
+                            7Hyori
                             <div class="menu-sub">pilihan varian produk</div>
                         </div>
                     </div>
                     <div class="arrow-icon">▼</div>
                 </div>
                 <div class="submenu-content">
-                    <a href="https://forms.gle/NmXSbYDXdz2wYQoJ9" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🐔</span> Chicken Nugget
                     </a>
-                    <a href="https://forms.gle/DtrG8a3MB7VctyHd6" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🥖</span> Sosis
                     </a>
-                    <a href="https://forms.gle/SHhG8CYJBha9wpu2A" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🍔</span> Compliment
                     </a>
-                    <a href="https://forms.gle/o1AjvgveakGJJNAm6" target="_blank" class="submenu-link">
+                    <a href="javascript:void(0);" onclick="alert('Product belum tersedia');" class="submenu-link">
                         <span class="sub-icon">🥩</span> Beef / Daging
                     </a>
                 </div>
@@ -379,7 +400,7 @@
         </div>
 
         <div class="footer">
-            © 2026 PT Selera Prima Food — Forecast Stock <br>
+            © 2026 PT Selera Prima Food — Forecast <br>
             Created by Wahyu Teguh Susanto | Business Intelligence Analyst
         </div>
     </div>
@@ -401,7 +422,7 @@
             link.addEventListener('click', () => {
                 const brandName = link.closest('.menu-item-wrapper').querySelector('.menu-title').innerText.split('\n')[0];
                 const productName = link.innerText.trim();
-                console.log(`[Market Sampling] Akses Brand: ${brandName} -> Varian: ${productName}`);
+                console.log(`[Market Forecast] Akses Brand: ${brandName} -> Varian: ${productName}`);
             });
         });
     </script>
