@@ -35,15 +35,21 @@
             transform: translateY(-3px);
         }
 
-        /* Update Header: Menggunakan Gambar Gedung SPF dengan Overlay Gelap */
+        /* FIX: Menggunakan Aspek Rasio Gambar Gedung Asli agar Tidak Terpotong di GitHub */
         .header {
             position: relative;
-            background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 100%), url('https://drive.google.com/file/d/1SkwaGL_tOawHANtXv58sqLlIvPhJlvFO/view?usp=drive_link');
+            /* Menggunakan gambar lokal yang satu folder di GitHub. Pastikan nama file di repo sama persis huruf besar/kecilnya */
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%), url('Building Office SPF.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center 30%; /* Fokus digeser ke area gedung agar tidak terpotong langit terlalu banyak */
+            background-repeat: no-repeat;
             color: white;
-            padding: 45px 24px;
+            padding: 80px 24px 25px 24px; /* Padding atas ditambah supaya teks turun ke bawah gambar gedung */
             text-align: center;
+            min-height: 230px; /* Tinggi ideal agar gedung terlihat proporsional */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
         }
 
         .header::after {
@@ -58,30 +64,28 @@
             z-index: 1;
         }
 
-        /* Memastikan konten teks berada di atas overlay gambar */
         .header h1 {
             position: relative;
             z-index: 2;
             font-size: 1.55rem;
-            font-weight: 800; /* Tebal solid */
+            font-weight: 800;
             margin: 0;
             line-height: 1.2;
             text-transform: uppercase;
             letter-spacing: -0.3px;
             color: #FFFFFF;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8); /* Dipertebal agar teks kontras dengan background gedung */
         }
 
-        /* Gaya Tulisan Sub-Judul Platform */
         .header h1 span {
             display: block;
             font-size: 1.1rem;
-            font-weight: 400; /* Gaya tipis elegan */
-            letter-spacing: 2px; /* Renggang estetik */
+            font-weight: 400;
+            letter-spacing: 2px;
             margin-top: 8px;
             color: #F8FAFC;
             opacity: 0.95;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .menu-section {
@@ -89,7 +93,6 @@
             background-color: #ffffff;
         }
 
-        /* Wrapper untuk item menu */
         .menu-item-wrapper {
             margin-bottom: 18px;
             border-radius: 20px;
@@ -104,7 +107,6 @@
             box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.18);
         }
 
-        /* Tombol Utama / Brand - Dark Blue Premium */
         .menu-header {
             background-color: #102A43; 
             color: #ffffff;            
@@ -128,7 +130,6 @@
             gap: 16px;
         }
 
-        /* Styling Kontainer Icon Gambar - DEFAULT HITAM SOLID */
         .brand-logo-container {
             display: flex;
             align-items: center;
@@ -142,12 +143,10 @@
             overflow: hidden;
         }
 
-        /* KELAS UNTUK WARNA KUNING MCD */
         .brand-logo-container.bg-mcd-yellow {
             background-color: #FFC72C !important;
         }
 
-        /* KELAS UNTUK WARNA DARK BLUE */
         .brand-logo-container.bg-dark-blue {
             background-color: #1A365D !important;
         }
@@ -159,20 +158,10 @@
             transition: all 0.2s;
         }
 
-        /* Custom Zoom khusus logo yang teks/gambarnya kecil bawaan */
-        .scale-nagetku {
-            transform: scale(2.5);
-        }
+        .scale-nagetku { transform: scale(2.5); }
+        .scale-pickets { transform: scale(2.6); }
+        .scale-7hyori { transform: scale(2.5); }
 
-        .scale-pickets {
-            transform: scale(2.6);
-        }
-
-        .scale-7hyori {
-            transform: scale(2.5);
-        }
-
-        /* Efek pop-up halus saat hover */
         .menu-item-wrapper:hover .brand-logo-img:not(.scale-nagetku):not(.scale-pickets):not(.scale-7hyori) {
             transform: scale(1.05);
         }
@@ -196,7 +185,6 @@
             color: #BCCCDC; 
         }
 
-        /* Indikator Panah Dropdown */
         .arrow-icon {
             font-size: 1rem;
             color: #ffffff;
@@ -207,7 +195,6 @@
             display: none;
         }
 
-        /* Konten Dropdown (Sublist Varian) */
         .submenu-content {
             max-height: 0;
             overflow: hidden;
@@ -224,7 +211,6 @@
             transform: rotate(180deg);
         }
 
-        /* Link Submenu */
         .submenu-link {
             display: flex;
             align-items: center;
@@ -252,7 +238,6 @@
             font-size: 1.2rem;
         }
 
-        /* Footer */
         .footer {
             text-align: center;
             padding: 16px 20px 20px;
@@ -264,10 +249,9 @@
             letter-spacing: 0.4px;
         }
 
-        /* Tampilan Mobile */
         @media (max-width: 480px) {
             body { padding: 16px; }
-            .header { padding: 36px 16px; }
+            .header { min-height: 180px; padding: 50px 16px 15px 16px; }
             .header h1 { font-size: 1.25rem; }
             .header h1 span { font-size: 0.95rem; margin-top: 6px; }
             .menu-section { padding: 20px 18px; }
