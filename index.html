@@ -16,10 +16,14 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #0A2F2A;  /* Dark Green Elegan */
+            /* Menggunakan gambar frozen food & daging dengan overlay gelap agar kontainer tetap kontras */
+            background-image: linear-gradient(rgba(10, 47, 42, 0.85), rgba(10, 47, 42, 0.85)), 
+                              url('https://images.unsplash.com/photo-1608248597481-496100c8c836?q=80&w=1200&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             padding: 20px;
         }
-
         .container {
             width: 100%;
             max-width: 500px;
